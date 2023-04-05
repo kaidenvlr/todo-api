@@ -3,6 +3,7 @@ from django.db import models
 
 
 class Team(models.Model):
+    name = models.CharField(max_length=50, verbose_name='Название команды')
     members = models.ManyToManyField(User, related_name='team', verbose_name='Участники команды')
 
     def __str__(self):
